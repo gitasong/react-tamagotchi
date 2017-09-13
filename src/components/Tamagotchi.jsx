@@ -17,12 +17,12 @@ class TamagotchiGame extends React.Component {
   }
 
   render() {
-    var newTamagotchi = new Tamagotchi("Charlie", this.state.isSleeping, this.state.sleep, this.state.food, this.state.play);
+    var newTamagotchi = new Tamagotchi("Charlie", "https://image.flaticon.com/icons/svg/447/447518.svg", this.state.isSleeping, this.state.sleep, this.state.food, this.state.play);
 
 
     return (
       <div>
-        <img></img>
+        <img src={newTamagotchi.image}></img>
         <h2>{newTamagotchi.name}</h2>
         <Sleep sleep={newTamagotchi.sleep}/>
         <Food food={newTamagotchi.food}/>
