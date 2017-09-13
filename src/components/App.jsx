@@ -1,5 +1,5 @@
 import React from "react";
-import NewTamagotchi from " ./NewTamagotchi";
+import NewTamagotchi from "./NewTamagotchi";
 import Tamagotchi from "./Tamagotchi";
 
 function App(){
