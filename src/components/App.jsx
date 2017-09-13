@@ -1,12 +1,12 @@
 import React from "react";
 import NewTamagotchi from "./NewTamagotchi";
-import Tamagotchi from "./Tamagotchi";
+import TamagotchiGame from "./TamagotchiGame";
 
 function App(){
   return (
     <div>
       <NewTamagotchi/>
-      <Tamagotchi/>
+      <TamagotchiGame/>
     </div>
   );
 }
