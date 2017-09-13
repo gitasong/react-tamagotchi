@@ -1,4 +1,7 @@
 import React from "react";
+import Sleep from "./Sleep";
+import Food from "./Food";
+import Play from "./Play";
 
 class TamagotchiGame exends React.Component {
 
@@ -21,8 +24,8 @@ class TamagotchiGame exends React.Component {
         <img></img>
         <h2>{newTamagotchi.name}</h2>
         <Sleep sleep={newTamagotchi.sleep}/>
-        <Food food={newTamagotchi.food}/>
-        <Play play={newTamagotchi.play}/>
+        // <Food food={newTamagotchi.food}/>
+        // <Play play={newTamagotchi.play}/>
       </div>
     )
   }
