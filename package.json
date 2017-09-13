@@ -1,7 +1,7 @@
 {
-  "name": "react-help-queue",
+  "name": "react-tamagotchi",
   "version": "1.0.0",
-  "description": "react based help queue",
+  "description": "react based tamagotchi game",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
