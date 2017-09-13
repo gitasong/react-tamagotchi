@@ -8,12 +8,12 @@ class Tamagotchi {
     this.sleep = sleep;
     this.food = food;
     this.play = play;
-    this.timeBorn = new Moment().format('MMMM Do YYYY, h:mm:ss a');
+    this.birthday = new Moment().format('MMMM Do YYYY, h:mm:ss a');
     this.timeAlive = "a few seconds";
   }
 
   setTimeAlive() {
-    this.timeAlive = this.timeBorn.fromNow(true);
+    this.timeAlive = this.birthday.fromNow(true);
   }
 }
 

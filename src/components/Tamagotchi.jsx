@@ -32,7 +32,7 @@ class TamagotchiGame extends React.Component {
       <div>
         <img src={newTamagotchi.image}></img>
         <h2>{newTamagotchi.name}</h2>
-        <h4>Time Born: {newTamagotchi.timeBorn}</h4>
+        <h4>Birthday: {newTamagotchi.birthday}</h4>
         <Sleep sleep={newTamagotchi.sleep}/>
         <Food food={newTamagotchi.food}/>
         <Play play={newTamagotchi.play}/>
