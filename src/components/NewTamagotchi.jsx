@@ -9,7 +9,11 @@ function NewTamagotchi(props) {
         <input
           type="text"
           id="name"
-          placeholder="Enter your Tamagotchi's name" />
+          placeholder="Tamagotchi name" />
+          <input
+            type="text"
+            id="image"
+            placeholder="Tamagotchi avatar URL" />
         <button type="submit">Create New Tamagotchi</button>
       </form>
     </div>
