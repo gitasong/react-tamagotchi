@@ -5,6 +5,7 @@ import TamagotchiGame from "./TamagotchiGame";
 function App(){
   return (
     <div>
+      <NewTamagotchi/>
       <TamagotchiGame/>
     </div>
   );
