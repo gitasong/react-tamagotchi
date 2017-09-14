@@ -14,9 +14,9 @@ class TamagotchiGame extends React.Component {
     super(props);
     this.state = {
       isSleeping: false,
-      sleep: 20,
-      food: 10,
-      play: 10,
+      sleep: 15,
+      food: 5,
+      play: 20,
       timeAlive: this.displayTimeAlive(this.birthday)
     };
 
@@ -32,7 +32,7 @@ class TamagotchiGame extends React.Component {
       this.updateTimeAlive(), 5000
     );
     this.tamagotchiKiller = setInterval(() => this.decreaseStats(this.state.sleep, this.state.food, this.state.play),
-      5000
+      60000
     );
   }
 
@@ -51,14 +51,26 @@ class TamagotchiGame extends React.Component {
 
   decreaseStats(sleep, food, play) {
     let newSleepState = this.state.sleep;
-    newSleepState--;
-    this.setState({sleep:newSleepState});
     let newFoodState = this.state.food;
-    newFoodState--;
-    this.setState({food:newFoodState});
     let newPlayState = this.state.play;
-    newPlayState--;
-    this.setState({play:newPlayState})
+    if (newSleepState > 0) {
+      newSleepState--;
+      this.setState({sleep:newSleepState});
+    } else {
+      alert("Your tamagotchi died from lack of sleep! :(")
+    }
+    if (newFoodState > 0) {
+      newFoodState--;
+      this.setState({food:newFoodState});
+    } else {
+      alert("Your tamagotchi died from starvation! :(")
+    }
+    if (newPlayState > 0) {
+      newPlayState--;
+      this.setState({play:newPlayState})
+    } else {
+      alert("Your tamagotchi died from lack of attention!  :(")
+    }
   }
 
   increaseSleep() {
