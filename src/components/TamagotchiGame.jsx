@@ -21,6 +21,7 @@ class TamagotchiGame extends React.Component {
     };
     this.increaseSleep = this.increaseSleep.bind(this);
     this.increaseFood = this.increaseFood.bind(this);
+    this.increasePlay = this.increasePlay.bind(this);
   }
 
   displayTimeAlive(birthday) {
@@ -40,6 +41,12 @@ class TamagotchiGame extends React.Component {
     let newFoodState = this.state.food;
     newFoodState++;
     this.setState({food:newFoodState})
+  }
+
+  increasePlay(play) {
+    let newPlayState = this.state.play;
+    newPlayState++;
+    this.setState({play:newPlayState})
   }
 
   render() {
@@ -62,7 +69,7 @@ class TamagotchiGame extends React.Component {
         <Button bsSize="small" bsStyle="success" onClick={() => {this.increaseFood(this.state.food)}}>Feed Tamagotchi</Button>
         <br/>
         <Play play={newTamagotchi.play}/>
-        <Button bsSize="small" bsStyle="warning">Play With Tamagotchi</Button>
+      <Button bsSize="small" bsStyle="warning" onClick={() => {this.increasePlay(this.state.play)}}>Play With Tamagotchi</Button>
         <br/>
       </div>
     );
