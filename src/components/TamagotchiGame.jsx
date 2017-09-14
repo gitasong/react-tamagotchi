@@ -20,6 +20,7 @@ class TamagotchiGame extends React.Component {
       timeAlive: this.displayTimeAlive(this.birthday)
     };
     this.increaseSleep = this.increaseSleep.bind(this);
+    this.increaseFood = this.increaseFood.bind(this);
   }
 
   displayTimeAlive(birthday) {
@@ -35,6 +36,12 @@ class TamagotchiGame extends React.Component {
     this.setState({sleep:newSleepState})
   }
 
+  increaseFood(food) {
+    let newFoodState = this.state.food;
+    newFoodState++;
+    this.setState({food:newFoodState})
+  }
+
   render() {
     var newTamagotchi = new Tamagotchi("Charlie", "https://image.flaticon.com/icons/svg/447/447518.svg", this.state.isSleeping, this.state.sleep, this.state.food, this.state.play);
 
@@ -46,13 +53,13 @@ class TamagotchiGame extends React.Component {
       <div>
         <img style={avatarStyle} src={newTamagotchi.image}></img>
         <h2>{newTamagotchi.name}</h2>
-      <h4>Birthday: {newTamagotchi.birthdayFormatted}</h4>
+        <h4>Birthday: {newTamagotchi.birthdayFormatted}</h4>
         <h4>Time Alive: {this.state.timeAlive}</h4>
         <Sleep sleep={newTamagotchi.sleep}/>
         <Button bsSize="small" bsStyle="primary" onClick={() => {this.increaseSleep(this.state.sleep)}}>Sleep Tamagotchi</Button>
         <br/>
         <Food food={newTamagotchi.food}/>
-        <Button bsSize="small" bsStyle="success">Feed Tamagotchi</Button>
+        <Button bsSize="small" bsStyle="success" onClick={() => {this.increaseFood(this.state.food)}}>Feed Tamagotchi</Button>
         <br/>
         <Play play={newTamagotchi.play}/>
         <Button bsSize="small" bsStyle="warning">Play With Tamagotchi</Button>
