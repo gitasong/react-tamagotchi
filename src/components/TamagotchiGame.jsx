@@ -14,7 +14,8 @@ class TamagotchiGame extends React.Component {
       isSleeping: false,
       sleep: 20,
       food: 10,
-      play: 10
+      play: 10,
+      timeAlive: this.displayTimeAlive(this.birthday)
     };
   }
 
