@@ -6,6 +6,7 @@ import Sleep from "./Sleep";
 import Food from "./Food";
 import Play from "./Play";
 import { Image } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 class TamagotchiGame extends React.Component {
 
@@ -41,8 +42,14 @@ class TamagotchiGame extends React.Component {
         <h4>Birthday: {newTamagotchi.birthday}</h4>
         <h4>Time Alive: {this.state.timeAlive}</h4>
         <Sleep sleep={newTamagotchi.sleep}/>
+        <Button>Sleep Tamagotchi</Button>
+        <br/>
         <Food food={newTamagotchi.food}/>
+        <Button>Feed Tamagotchi</Button>
+        <br/>
         <Play play={newTamagotchi.play}/>
+        <Button>Play With Tamagotchi</Button>
+        <br/>
       </div>
     );
   }
