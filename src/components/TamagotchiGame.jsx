@@ -19,6 +19,7 @@ class TamagotchiGame extends React.Component {
       play: 10,
       timeAlive: this.displayTimeAlive(this.birthday)
     };
+    this.increaseSleep = this.increaseSleep.bind(this);
   }
 
   displayTimeAlive(birthday) {
@@ -26,6 +27,12 @@ class TamagotchiGame extends React.Component {
     let then = new Moment(birthday);
     let stringTime = then.from(now, true);
     return stringTime;
+  }
+
+  increaseSleep(sleep) {
+    let newSleepState = this.state.sleep;
+    newSleepState++;
+    this.setState({sleep:newSleepState})
   }
 
   render() {
@@ -39,10 +46,10 @@ class TamagotchiGame extends React.Component {
       <div>
         <img style={avatarStyle} src={newTamagotchi.image}></img>
         <h2>{newTamagotchi.name}</h2>
-        <h4>Birthday: {newTamagotchi.birthday}</h4>
+      <h4>Birthday: {newTamagotchi.birthdayFormatted}</h4>
         <h4>Time Alive: {this.state.timeAlive}</h4>
         <Sleep sleep={newTamagotchi.sleep}/>
-        <Button bsSize="small" bsStyle="primary">Sleep Tamagotchi</Button>
+        <Button bsSize="small" bsStyle="primary" onClick={() => {this.increaseSleep(this.state.sleep)}}>Sleep Tamagotchi</Button>
         <br/>
         <Food food={newTamagotchi.food}/>
         <Button bsSize="small" bsStyle="success">Feed Tamagotchi</Button>
