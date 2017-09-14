@@ -8,10 +8,12 @@ function NewTamagotchi(props) {
     <div>
       <form>
         <input
+          ref="_name"
           type="text"
           id="name"
           placeholder="Tamagotchi name" />
           <input
+            ref="_image"
             type="text"
             id="image"
             placeholder="Tamagotchi avatar URL" />
