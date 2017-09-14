@@ -8,8 +8,10 @@ class Tamagotchi {
     this.sleep = sleep;
     this.food = food;
     this.play = play;
-    this.birthday = new Moment().format('MMMM Do YYYY, h:mm:ss a');
-    this.timeAlive = "a few seconds";
+    this.birthday = new Moment();
+    this.birthdayFormatted = new Moment().format('MMMM Do YYYY, h:mm:ss a');
+    this.timeAlive = this.setTimeAlive();
+    console.log(this.timeAlive);
   }
 
   setTimeAlive() {
