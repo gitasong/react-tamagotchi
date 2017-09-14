@@ -81,13 +81,13 @@ class TamagotchiGame extends React.Component {
     return (
       <div>
         <img style={avatarStyle} src={this.newTamagotchi.image}></img>
-      <h2>{this.newTamagotchi.name}</h2>
-    <h4>Birthday: {this.newTamagotchi.birthdayFormatted}</h4>
+        <h2>{this.newTamagotchi.name}</h2>
+        <h4>Birthday: {this.newTamagotchi.birthdayFormatted}</h4>
         <h4>Time Alive: {this.state.timeAlive}</h4>
         <div style={statsGridStyle}>
-          <Sleep sleep={this.newTamagotchi.sleep}/>
-        <Food food={this.newTamagotchi.food}/>
-      <Play play={this.newTamagotchi.play}/>
+          <Sleep sleep={this.state.sleep}/>
+          <Food food={this.state.food}/>
+          <Play play={this.state.play}/>
           <Button bsSize="small" bsStyle="primary" onClick={() => {this.increaseSleep(this.state.sleep)}}>Sleep Tamagotchi</Button>
           <Button bsSize="small" bsStyle="success" onClick={() => {this.increaseFood(this.state.food)}}>Feed Tamagotchi</Button>
           <Button bsSize="small" bsStyle="warning" onClick={() => {this.increasePlay(this.state.play)}}>Play With Tamagotchi</Button>
