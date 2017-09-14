@@ -7,6 +7,13 @@ class NewTamagotchi extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleFormSubmission = this.handleFormSubmission.bind(this);
+  }
+
+  handleFormSubmission(event) {
+    event.preventDefault();
+    const { _name, _image } = this.refs;
+    console.log(`Data Gathered: ${_name.value}, ${_image.value}`);
   }
 
   render () {
