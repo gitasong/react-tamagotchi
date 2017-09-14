@@ -1,6 +1,7 @@
 import React from "react";
 import Tamagotchi from "../models/Tamagotchi.js";
 import PropTypes from "prop-types";
+import { Button } from "react-bootstrap";
 
 function NewTamagotchi(props) {
   return (
@@ -14,7 +15,7 @@ function NewTamagotchi(props) {
             type="text"
             id="image"
             placeholder="Tamagotchi avatar URL" />
-        <button type="submit">Create New Tamagotchi</button>
+          <Button bsStyle="success" type="submit">Create New Tamagotchi</Button>
       </form>
     </div>
   );
