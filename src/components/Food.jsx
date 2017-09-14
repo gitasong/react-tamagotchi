@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function Food(props) {
   return (
-    <span>Food: {props.food}</span>
+    <div><span>Food: </span><span>{props.food}</span></div>
   );
 }
 

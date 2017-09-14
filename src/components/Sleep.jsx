@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function Sleep(props) {
   return (
-    <span>Sleep: {props.sleep}</span>
+    <div><span>Sleep: </span><span>{props.sleep}</span></div>
   );
 }
 

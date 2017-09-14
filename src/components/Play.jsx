@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function Play(props) {
   return (
-    <span>Play: {props.play}</span>
+    <div><span>Play: </span><span>{props.play}</span></div>
   );
 }
 
