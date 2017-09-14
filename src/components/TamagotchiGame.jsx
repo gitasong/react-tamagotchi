@@ -18,9 +18,9 @@ class TamagotchiGame extends React.Component {
     };
   }
 
-  displayTimeAlive(timeBorn) {
+  displayTimeAlive(birthday) {
     let now = new Moment(new Date());
-    let then = new Moment(timeBorn);
+    let then = new Moment(birthday);
     let stringTime = then.from(now, true);
     return stringTime;
   }
