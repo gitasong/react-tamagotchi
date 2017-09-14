@@ -69,7 +69,7 @@ class TamagotchiGame extends React.Component {
         <Button bsSize="small" bsStyle="success" onClick={() => {this.increaseFood(this.state.food)}}>Feed Tamagotchi</Button>
         <br/>
         <Play play={newTamagotchi.play}/>
-      <Button bsSize="small" bsStyle="warning" onClick={() => {this.increasePlay(this.state.play)}}>Play With Tamagotchi</Button>
+        <Button bsSize="small" bsStyle="warning" onClick={() => {this.increasePlay(this.state.play)}}>Play With Tamagotchi</Button>
         <br/>
       </div>
     );
