@@ -19,9 +19,17 @@ class TamagotchiGame extends React.Component {
       play: 10,
       timeAlive: this.displayTimeAlive(this.birthday)
     };
+    // this.updateTimeAlive = this.updateTimeAlive.bind(this);
     this.increaseSleep = this.increaseSleep.bind(this);
     this.increaseFood = this.increaseFood.bind(this);
     this.increasePlay = this.increasePlay.bind(this);
+  }
+
+  componentDidMount() {
+    this.timeAliveChecker = setInterval(() =>
+      this.updateTimeAlive(),
+      5000
+    );
   }
 
   displayTimeAlive(birthday) {
@@ -30,6 +38,13 @@ class TamagotchiGame extends React.Component {
     let stringTime = then.from(now, true);
     return stringTime;
   }
+
+  // updateTimeAlive() {
+  //   console.log("check");
+  //   let newTimeAlive = this.state.timeAlive;
+  //   newTimeAlive.setTimeAlive();
+  //   this.setState({timeAlive:newTimeAlive})
+  // }
 
   increaseSleep(sleep) {
     let newSleepState = this.state.sleep;
@@ -56,21 +71,27 @@ class TamagotchiGame extends React.Component {
       width: "30%"
     }
 
+    var statsGridStyle = {
+      display: "grid",
+      gridTemplateColumns: "14% 14% 14%",
+      gridTemplateRows: "10%",
+      gridGap: "1rem 2%"
+    }
+
     return (
       <div>
         <img style={avatarStyle} src={newTamagotchi.image}></img>
         <h2>{newTamagotchi.name}</h2>
         <h4>Birthday: {newTamagotchi.birthdayFormatted}</h4>
         <h4>Time Alive: {this.state.timeAlive}</h4>
-        <Sleep sleep={newTamagotchi.sleep}/>
-        <Button bsSize="small" bsStyle="primary" onClick={() => {this.increaseSleep(this.state.sleep)}}>Sleep Tamagotchi</Button>
-        <br/>
-        <Food food={newTamagotchi.food}/>
-        <Button bsSize="small" bsStyle="success" onClick={() => {this.increaseFood(this.state.food)}}>Feed Tamagotchi</Button>
-        <br/>
-        <Play play={newTamagotchi.play}/>
-        <Button bsSize="small" bsStyle="warning" onClick={() => {this.increasePlay(this.state.play)}}>Play With Tamagotchi</Button>
-        <br/>
+        <div style={statsGridStyle}>
+          <Sleep sleep={newTamagotchi.sleep}/>
+          <Food food={newTamagotchi.food}/>
+          <Play play={newTamagotchi.play}/>
+          <Button bsSize="small" bsStyle="primary" onClick={() => {this.increaseSleep(this.state.sleep)}}>Sleep Tamagotchi</Button>
+          <Button bsSize="small" bsStyle="success" onClick={() => {this.increaseFood(this.state.food)}}>Feed Tamagotchi</Button>
+          <Button bsSize="small" bsStyle="warning" onClick={() => {this.increasePlay(this.state.play)}}>Play With Tamagotchi</Button>
+        </div>
       </div>
     );
   }
