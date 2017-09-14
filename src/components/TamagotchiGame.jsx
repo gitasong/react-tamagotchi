@@ -29,7 +29,9 @@ class TamagotchiGame extends React.Component {
 
   componentDidMount() {
     this.timeAliveChecker = setInterval(() =>
-      this.updateTimeAlive(),
+      this.updateTimeAlive(), 5000
+    );
+    this.tamagotchiKiller = setInterval(() => this.decreaseStats(this.state.sleep, this.state.food, this.state.play),
       5000
     );
   }
@@ -47,19 +49,31 @@ class TamagotchiGame extends React.Component {
     this.setState({timeAlive:newTimeAlive})
   }
 
-  increaseSleep(sleep) {
+  decreaseStats(sleep, food, play) {
+    let newSleepState = this.state.sleep;
+    newSleepState--;
+    this.setState({sleep:newSleepState});
+    let newFoodState = this.state.food;
+    newFoodState--;
+    this.setState({food:newFoodState});
+    let newPlayState = this.state.play;
+    newPlayState--;
+    this.setState({play:newPlayState})
+  }
+
+  increaseSleep() {
     let newSleepState = this.state.sleep;
     newSleepState++;
     this.setState({sleep:newSleepState})
   }
 
-  increaseFood(food) {
+  increaseFood() {
     let newFoodState = this.state.food;
     newFoodState++;
     this.setState({food:newFoodState})
   }
 
-  increasePlay(play) {
+  increasePlay() {
     let newPlayState = this.state.play;
     newPlayState++;
     this.setState({play:newPlayState})
