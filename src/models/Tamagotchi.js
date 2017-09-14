@@ -1,13 +1,12 @@
 import Moment from "moment";
 
 class Tamagotchi {
-  constructor(name, image, isSleeping, sleep, food, play) {
+  constructor(name, image) {
     this.name = name;
     this.image = image;
-    this.isSleeping = false;
-    this.sleep = sleep;
-    this.food = food;
-    this.play = play;
+    this.sleep = 15;
+    this.food = 5;
+    this.play = 20;
     this.birthday = new Moment();
     this.birthdayFormatted = new Moment().format('MMMM Do YYYY, h:mm:ss a');
     // this.timeAlive = this.setTimeAlive();
